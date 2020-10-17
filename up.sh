@@ -114,7 +114,9 @@ if [ "$1" == "" ]; then
 	line
 	echo '# [5/'$STEPS'] CH Rooting'
 	
-	arch-chroot /mnt /home/danilo/up-my-yoga/up.sh chroot	
+	cp -r ../up-my-yoga /mnt/tmp/up-my-yoga
+
+	arch-chroot /mnt /tmp/up-my-yoga/up.sh chroot
 
 fi
 
@@ -130,7 +132,7 @@ if [ "$1" == "chroot" ]; then
 	# links
     BIN=/usr/bin
    
-	ln -s /home/danilo/up-my-yoga/config/10-monitor.conf /etc/X11/xorg.conf.d
+	ln -s /tmp/up-my-yoga/config/10-monitor.conf /etc/X11/xorg.conf.d
 	## TODO
     #ln -s /home/l31rb4g/opt/Rambox/rambox $BIN
 	#ln -s /home/l31rb4g/scripts/aur $BIN
