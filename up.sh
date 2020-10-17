@@ -102,8 +102,6 @@ if [ "$1" == "" ]; then
 	echo 'The following packages will be installed:'
 	echo $PACKAGES
 
-	confirm
-
 	time pacstrap /mnt $PACKAGES
 
 	confirm
@@ -114,9 +112,9 @@ if [ "$1" == "" ]; then
 	line
 	echo '# [5/'$STEPS'] CH Rooting'
 	
-	cp -r ../up-my-yoga /mnt/tmp/up-my-yoga
+	cp -r ../up-my-yoga /mnt/home/up-my-yoga
 
-	arch-chroot /mnt /tmp/up-my-yoga/up.sh chroot
+	arch-chroot /mnt /home/up-my-yoga/up.sh chroot
 
 fi
 
@@ -132,7 +130,7 @@ if [ "$1" == "chroot" ]; then
 	# links
     BIN=/usr/bin
    
-	ln -s /tmp/up-my-yoga/config/10-monitor.conf /etc/X11/xorg.conf.d
+	ln -s /home/up-my-yoga/config/10-monitor.conf /etc/X11/xorg.conf.d
 	## TODO
     #ln -s /home/l31rb4g/opt/Rambox/rambox $BIN
 	#ln -s /home/l31rb4g/scripts/aur $BIN
@@ -183,7 +181,10 @@ if [ "$1" == "chroot" ]; then
 	line
 	echo '# [9/'$STEPS'] Installing GRUB EUFI'
 
-	pacman -S grub-efi-x86_64 efibootmgr --noconfirm
+	confirm
+
+	pacman -Syu --noconfirm
+	pacman -S grub-efi-x86_64 efibootmgr
 	grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=arch_grub --recheck
 	cp /usr/share/locale/en@quot/LC_MESSAGES/grub.mo /boot/grub/locale/en.mo
 	grub-mkconfig -o /boot/grub/grub.cfg
@@ -223,7 +224,6 @@ if [ "$1" == "chroot" ]; then
 	sudo make install
 	cd $old_pwd
 
-
 	# floyd
 	old_pwd=$(pwd)
 	cd /tmp
@@ -255,6 +255,8 @@ if [ "$1" == "chroot" ]; then
     # aur
     sudo -u dcymaia aur https://aur.archlinux.org/v4l2loopback-dkms-git.git
     sudo -u dcymaia aur https://aur.archlinux.org/spotify.git
+
+    rm -Rf /home/up-my-yoga
 
     exit
 fi
