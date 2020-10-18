@@ -132,14 +132,14 @@ if [ "$1" == "chroot" ]; then
 
     ln -s /home/up-my-yoga/config/10-monitor.conf /etc/X11/xorg.conf.d
     ## TODO
-    #ln -s /home/l31rb4g/opt/Rambox/rambox $BIN
-    #ln -s /home/l31rb4g/scripts/aur $BIN
-    #ln -s /home/l31rb4g/scripts/heidisql $BIN
-    #ln -s /home/l31rb4g/scripts/ctrlc $BIN
-    #ln -s /home/l31rb4g/scripts/vlcshare $BIN
-    #ln -s /home/l31rb4g/scripts/hl $BIN
-    #ln -s /home/l31rb4g/scripts/timebox $BIN
-    #ln -s /home/l31rb4g/scripts/fireworks $BIN
+    #ln -s /home/up-my-yoga/opt/Rambox/rambox $BIN
+    ln -s /home/up-my-yoga/scripts/aur $BIN
+    #ln -s /home/up-my-yoga/scripts/heidisql $BIN
+    #ln -s /home/up-my-yoga/scripts/ctrlc $BIN
+    #ln -s /home/up-my-yoga/scripts/vlcshare $BIN
+    ln -s /home/up-my-yoga/scripts/hl $BIN
+    #ln -s /home/up-my-yoga/scripts/timebox $BIN
+    #ln -s /home/up-my-yoga/scripts/fireworks $BIN
 
     echo
     line
@@ -222,8 +222,8 @@ if [ "$1" == "chroot" ]; then
         --enable-cscope \
         --with-x
 
-    make
-    sudo make install
+    #make
+    #sudo make install
     cd $old_pwd
 
     # floyd
@@ -252,11 +252,14 @@ if [ "$1" == "chroot" ]; then
 
     # steam
     pacman -S --noconfirm steam lib32-libdrm
-    sudo -u dcymaia aur https://aur.archlinux.org/steam-fonts.git
+    sudo -u danilo aur https://aur.archlinux.org/steam-fonts.git
 
     # aur
-    sudo -u dcymaia aur https://aur.archlinux.org/v4l2loopback-dkms-git.git
-    sudo -u dcymaia aur https://aur.archlinux.org/spotify.git
+    sudo -u danilo aur https://aur.archlinux.org/v4l2loopback-dkms-git.git
+    sudo -u danilo aur https://aur.archlinux.org/spotify.git
+
+    # additional packages
+    pacman -S dosfstools os-prober mtools network-manager-applet networkmanager wpa_supplicant wireless_tools dialog
 
     rm -Rf /home/up-my-yoga
 
