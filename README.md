@@ -1,7 +1,8 @@
 Up my yoga 
 # with Arch Linux
 
- Instructions:
+#### Instructions:
+
    1. Boot Arch Linux flashdrive
    2. Check Internet 
    ```
@@ -17,4 +18,21 @@ Up my yoga
    
 ```
 $ ./up.sh
+```
+
+#### Pos Installation
+
+* Configuring wifi with wpa_supplicant
+
+```
+$ systemctl stop NetworkManager
+$ systemctl disable NetworkManager
+
+$ iwconfig
+$ ifconfig wlp3s0 up
+$ iwlist wlp3s0 scan | grep _ESSID_
+$ wpa_passphrase your-ESSID your-passphrase | tee /etc/wpa_supplicant.conf
+$ wpa_supplicant -B -c /etc/wpa_supplicant.conf -i wlp3s0
+$ dhclient wlp3s0
+$ dhclient wlp3s0 -r
 ```
