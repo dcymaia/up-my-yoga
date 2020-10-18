@@ -28,11 +28,13 @@ $ ./up.sh
 $ systemctl stop NetworkManager
 $ systemctl disable NetworkManager
 
+$ rfkill
+$ rfkill unblock wifi
+
 $ iwconfig
-$ ifconfig wlp3s0 up
-$ iwlist wlp3s0 scan | grep ESSID
+$ ifconfig wlp0s20f3 up
+$ iwlist wlp0s20f3 scan | grep ESSID
 $ wpa_passphrase your-ESSID your-passphrase | tee /etc/wpa_supplicant.conf
-$ wpa_supplicant -B -c /etc/wpa_supplicant.conf -i wlp3s0
-$ dhclient wlp3s0
-$ dhclient wlp3s0 -r
+$ wpa_supplicant -B -c /etc/wpa_supplicant.conf -i wlp0s20f3
+$ ifconfig wlp0s20f3
 ```
