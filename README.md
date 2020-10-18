@@ -30,7 +30,7 @@ $ systemctl disable NetworkManager
 
 $ iwconfig
 $ ifconfig wlp3s0 up
-$ iwlist wlp3s0 scan | grep _ESSID_
+$ iwlist wlp3s0 scan | grep ESSID
 $ wpa_passphrase your-ESSID your-passphrase | tee /etc/wpa_supplicant.conf
 $ wpa_supplicant -B -c /etc/wpa_supplicant.conf -i wlp3s0
 $ dhclient wlp3s0
