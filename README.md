@@ -22,19 +22,36 @@ $ ./up.sh
 
 #### Pos Installation
 
-* Configuring wifi with wpa_supplicant
+Connect to a wireless network
+
+> Check wifi is unblocked
 
 ```
-$ systemctl stop NetworkManager
-$ systemctl disable NetworkManager
+# rfkill
+# rfkill unblock wifi
+```
 
-$ rfkill
-$ rfkill unblock wifi
+* Using command line nmcli
+```
+# systemctl enable NetworkManager
+# systemctl start NetworkManager
 
-$ iwconfig
-$ ifconfig wlp0s20f3 up
-$ iwlist wlp0s20f3 scan | grep ESSID
-$ wpa_passphrase your-ESSID your-passphrase | tee /etc/wpa_supplicant.conf
-$ wpa_supplicant -B -c /etc/wpa_supplicant.conf -i wlp0s20f3
-$ ifconfig wlp0s20f3
+# nmcli device wifi rescan
+# nmcli device wifi list
+# nmcli device wifi connect SSID-Name password wireless-password
+```
+
+> or
+
+* Configuring with wpa_supplicant
+```
+# systemctl stop NetworkManager
+# systemctl disable NetworkManager
+
+# iwconfig
+# ifconfig wlp0s20f3 up
+# iwlist wlp0s20f3 scan | grep ESSID
+# wpa_passphrase your-ESSID your-passphrase | tee /etc/wpa_supplicant.conf
+# wpa_supplicant -B -c /etc/wpa_supplicant.conf -i wlp0s20f3
+# ifconfig wlp0s20f3
 ```
