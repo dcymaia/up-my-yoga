@@ -12,7 +12,7 @@ Up my yoga
     $ iwctl station wlan0 connect "WIFI"
    ```
    3. Install git ```$ pacman -Sy git``` 
-   4. Clone this repo ```$ git clone https://github.com/dcymaia/up-my-yoga.git```
+   4. Clone this repo ```$ git clone https://github.com/dcymaia/up-yoga.git```
    5. Check TARGET_DISK variable
    6. Run this script
    
