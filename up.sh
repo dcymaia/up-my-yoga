@@ -222,8 +222,8 @@ if [ "$1" == "chroot" ]; then
         --enable-cscope \
         --with-x
 
-    #make
-    #sudo make install
+    make
+    sudo make install
     cd $old_pwd
 
     # floyd
