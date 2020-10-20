@@ -1,0 +1,10 @@
+#!/bin/bash
+
+
+output=''
+
+while read line; do
+    output=$output"\n"$line
+done
+
+echo -en $output | xclip -i -selection clipboard
