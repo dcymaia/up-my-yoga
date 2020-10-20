@@ -112,9 +112,10 @@ if [ "$1" == "" ]; then
     line
     echo '# [5/'$STEPS'] CH Rooting'
 
-    cp -r ../up-my-yoga /mnt/home/up-my-yoga
+    pacman -Sy --noconfirm git
+    git clone https://github.com/dcymaia/up-yoga.git /mnt/home/danilo/up-yoga    
 
-    arch-chroot /mnt /home/up-my-yoga/up.sh chroot
+    arch-chroot /mnt /home/danilo/up-yoga/arch-install.sh chroot
 
 fi
 
@@ -130,16 +131,15 @@ if [ "$1" == "chroot" ]; then
     # links
     BIN=/usr/bin
 
-    ln -s /home/up-my-yoga/config/10-monitor.conf /etc/X11/xorg.conf.d
-    ## TODO
-    #ln -s /home/up-my-yoga/opt/Rambox/rambox $BIN
-    ln -s /home/up-my-yoga/scripts/aur $BIN
-    #ln -s /home/up-my-yoga/scripts/heidisql $BIN
-    #ln -s /home/up-my-yoga/scripts/ctrlc $BIN
-    #ln -s /home/up-my-yoga/scripts/vlcshare $BIN
-    ln -s /home/up-my-yoga/scripts/hl $BIN
-    #ln -s /home/up-my-yoga/scripts/timebox $BIN
-    #ln -s /home/up-my-yoga/scripts/fireworks $BIN
+    ln -s /home/danilo/up-yoga/config/10-monitor.conf /etc/X11/xorg.conf.d    
+    #ln -s /home/danilo/up-yoga/opt/Rambox/rambox $BIN
+    ln -s /home/danilo/up-yoga/scripts/aur $BIN
+    ln -s /home/danilo/up-yoga/scripts/heidisql $BIN
+    ln -s /home/danilo/up-yoga/scripts/ctrlc $BIN
+    ln -s /home/danilo/up-yoga/scripts/vlcshare $BIN
+    ln -s /home/danilo/up-yoga/scripts/hl $BIN
+    ln -s /home/danilo/up-yoga/scripts/timebox $BIN
+    ln -s /home/danilo/up-yoga/scripts/fireworks $BIN
 
     echo
     line
@@ -245,7 +245,7 @@ if [ "$1" == "chroot" ]; then
     sudo pacman -Syu --noconfirm
 
     # nvidia
-    pacman -S nvidia nvidia-dkms nvidia-utils lib32-nvidia-utils
+    pacman -S --noconfirm nvidia nvidia-dkms nvidia-utils lib32-nvidia-utils
 
     # wine
     pacman -S --noconfirm wine
@@ -259,9 +259,7 @@ if [ "$1" == "chroot" ]; then
     sudo -u danilo aur https://aur.archlinux.org/spotify.git
 
     # additional packages
-    pacman -S dosfstools os-prober mtools network-manager-applet networkmanager wpa_supplicant wireless_tools dialog
-
-    rm -Rf /home/up-my-yoga
+    pacman -S --noconfirm dosfstools os-prober mtools network-manager-applet networkmanager wpa_supplicant wireless_tools dialog
 
     exit
 fi

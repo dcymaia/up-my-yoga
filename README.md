@@ -17,7 +17,7 @@ Up my yoga
    6. Run this script
    
 ```
-$ ./up.sh
+$ ./arch-install.sh
 ```
 
 #### Pos Installation

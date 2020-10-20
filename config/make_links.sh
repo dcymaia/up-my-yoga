@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-CONFDIR=$HOME/config
+CONFDIR=$HOME/up-yoga/config
 
 
 ln -s $CONFDIR/.vimrc $HOME
