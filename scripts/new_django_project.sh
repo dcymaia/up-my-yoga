@@ -73,7 +73,7 @@ git remote add origin ssh://paladino.pro/var/git/$NAME.git
 
 # git bare
 ssh paladino.pro 'sudo git init --bare /var/git/'$NAME'.git;\
-    sudo chown -R l31rb4g:l31rb4g /var/git/'$NAME'.git'
+    sudo chown -R danilo:danilo /var/git/'$NAME'.git'
 git push origin master
 
 

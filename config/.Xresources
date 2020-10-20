@@ -1,0 +1,70 @@
+! font
+*.font: xft:DejaVuSansMono:size=9
+
+! special
+*.foreground:   #cccccc
+*.background:   #20201d
+*.cursorColor:  #ffff00
+
+! black (color 1)
+*.color0:       #20201d
+*.color8:       #7d7a68
+
+! red (color 2)
+*.color1:       #d73737
+*.color9:       #d73737
+
+! green (color 3)
+*.color2:       #60ac39
+*.color10:      #60ac39
+
+! yellow (color 4)
+*.color3:       #cfb017
+*.color11:      #cfb017
+
+! blue (color 5)
+*.color4:       #6684e1
+*.color12:      #6684e1
+
+! magenta (color 6)
+*.color5:       #b854d4
+*.color13:      #b854d4
+
+! cyan (color 7)
+*.color6:       #1fad83
+*.color14:      #1fad83
+
+! white (color 8)
+*.color7:       #a6a28c
+*.color15:      #fefbec
+
+
+*.iso14755 : false
+*.scrollBar: false
+*.scrollBar_right: false
+*.saveLines: 10000
+*.urgentOnBell: false
+*.scrollTtyKeypress: true
+*.letterSpace: -1
+*.externalBorder: 0
+
+!*.copyCommand: xclip -i -selection clipboard
+!*.perl-ext-common:        default,xkr-clipboard
+!*.keysym.Shift-Up: command:\033]720;1\007
+!*.keysym.Shift-Down: command:\033]721;1\007
+!*.keysym.Shift-Control-C: eval:selection_to_clipboard
+!*.keysym.Shift-Control-V: eval:paste_clipboard
+!*.keysym.Shift-Insert: eval:paste_clipboard
+!*.keysym.Control-Up:    command:\033[1;5A
+!*.keysym.Control-Down:  command:\033[1;5B
+!*.keysym.Control-Left:  command:\033[1;5D
+!*.keysym.Control-Right: command:\033[1;5C
+!*.clipboard.autocopy: false
+
+XTerm*vt100*translations:   #override                       \n \
+    Shift Ctrl <KeyPress>C: copy-selection(CLIPBOARD)       \n \
+    Shift Ctrl <KeyPress>V: insert-selection(CLIPBOARD)     \n \
+    Shift <KeyPress>Insert: insert-selection(CLIPBOARD)     \n \
+    Shift <KeyPress>Up: scroll-back(1)                       \n \
+    Shift <KeyPress>Down: scroll-forw(1)                     \n \
+

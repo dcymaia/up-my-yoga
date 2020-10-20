@@ -23,8 +23,8 @@ unxz data.tar.xz
 tar -xvf data.tar
 
 killall rambox
-rm -rf /home/l31rb4g/opt/Rambox
-mv opt/Rambox /home/l31rb4g/opt
+rm -rf /home/danilo/opt/Rambox
+mv opt/Rambox /home/danilo/opt
 
 cd -
 

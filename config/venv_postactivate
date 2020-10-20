@@ -1,0 +1,12 @@
+#!/bin/bash
+# This hook is sourced after every virtualenv is activated.
+
+export CONFIG=config.yml
+
+#PS1="\[\e[1;37m\]`basename \"$VIRTUAL_ENV\"`\[\e[0m\] $_OLD_VIRTUAL_PS1"
+PS1=$_OLD_VIRTUAL_PS1
+#VENV="\e[1m"$(basename "$VIRTUAL_ENV")"\e[m/"
+VENV=$(basename "$VIRTUAL_ENV")
+if [ "$VENV" != "" ]; then
+    VENV="[$VENV]"
+fi
