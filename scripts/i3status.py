@@ -11,7 +11,7 @@ is_vertical = '--vertical' in sys.argv
 
 # network devices
 network_devices = {
-    'downquark': 'eno1'
+    'morere': 'wlp0s20f3'
 }
 
 # config
@@ -78,7 +78,7 @@ while True:
     
     # DISK SPACE
     # storage
-    size = shell('df -h /storage | grep storage')
+    size = shell('df -h /mnt | grep nvme0n1p2')
     while '  ' in size:
         size = size.replace('  ', ' ')
     size = size.split(' ')
@@ -114,7 +114,7 @@ while True:
     home_free = '{} free'.format(size[3])
     
     # root
-    size = shell('df -h / | grep sd')
+    size = shell('df -h / | grep nvme0n1p2')
     while '  ' in size:
         size = size.replace('  ', ' ')
     size = size.split(' ')
