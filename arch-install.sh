@@ -113,9 +113,9 @@ if [ "$1" == "" ]; then
     echo '# [5/'$STEPS'] CH Rooting'
 
     pacman -Sy --noconfirm git
-    git clone https://github.com/dcymaia/up-yoga.git /mnt/home/danilo/up-yoga    
+    git clone https://github.com/dcymaia/up-yoga.git /mnt/home/up-yoga
 
-    arch-chroot /mnt /home/danilo/up-yoga/arch-install.sh chroot
+    arch-chroot /mnt /home/up-yoga/arch-install.sh chroot
 
 fi
 
@@ -124,6 +124,15 @@ if [ "$1" == "chroot" ]; then
     echo
     line
     echo '# [6/'$STEPS'] System configuration'
+
+    # Create user Danilo
+    echo -e "\n>>> Please set danilo password"
+    useradd -m danilo
+    echo -e '1234\n1234' | passwd danilo
+    echo '>>> Password set to `1234`. Change later.'
+    echo '1234' | sudo -S -u danilo true
+
+    cp -r /home/up-yoga /home/danilo/up-yoga
 
     # fonts
     pacman -S --noconfirm noto-fonts ttf-dejavu ttf-roboto ttf-inconsolata
@@ -168,13 +177,6 @@ if [ "$1" == "chroot" ]; then
     echo -e "\n>>> Please set ROOT password"
     echo -e '1234\n1234' | passwd
     echo '>>> Password set to `1234`. Change later.'
-
-    # Danilo password
-    echo -e "\n>>> Please set danilo password"
-    useradd -m danilo
-    echo -e '1234\n1234' | passwd danilo
-    echo '>>> Password set to `1234`. Change later.'
-    echo '1234' | sudo -S -u danilo true
 
     # grub
     echo
@@ -260,6 +262,8 @@ if [ "$1" == "chroot" ]; then
 
     # additional packages
     pacman -S --noconfirm dosfstools os-prober mtools network-manager-applet networkmanager wpa_supplicant wireless_tools dialog
+
+    rm -Rf /home/up-yoga
 
     exit
 fi
