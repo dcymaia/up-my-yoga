@@ -7,6 +7,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'dracula/vim', {'as': 'dracula'}
+    Plug 'liuchengxu/space-vim-dark'
     Plug 'Yggdroot/indentLine'
     "Plug 'Valloric/YouCompleteMe'
     Plug 'vim-syntastic/syntastic'
@@ -21,7 +22,15 @@ call plug#begin('~/.vim/plugged')
 call plug#end()
 
 syntax on
-color dracula
+
+set termguicolors
+
+"color dracula
+color space-vim-dark
+hi Normal       ctermbg=NONE guibg=NONE
+hi LineNr       ctermbg=NONE guibg=NONE
+hi SignColumn   ctermbg=NONE guibg=NONE
+hi Comment      guifg=#5C6370 ctermfg=59
 
 set noswapfile
 set encoding=UTF-8

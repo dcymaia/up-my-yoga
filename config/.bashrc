@@ -31,18 +31,16 @@ alias vim='bash /home/danilo/scripts/run_vim'
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/bin/virtualenvwrapper.sh
 
-# BASH COMPLETION
-[[ $PS1 && -f /usr/share/bash-completion/bash_completion.sh ]] && \
-    source /usr/local/share/bash-completion/bash_completion.sh
+## BASH COMPLETION
+# [[ $PS1 && -f /usr/share/bash-completion/bash_completion.sh ]] && \
+#     source /usr/local/share/bash-completion/bash_completion.sh
 
-if [ $TERM == 'linux' ]; then
-    PS1='[\u@\h \W]\$ '
-else
-    #PS1='$(__git_ps1 "[$VENV/\[\e[34m\]%s\[\e[m]\]")[\[\e[32m\]\u\[\e[m\] \[\e[33m\]\W\[\e[m\]]\$ '
-    PS1='$VENV$(__git_ps1 "[\[\e[34m\]%s\[\e[m]\]")[\[\e[32m\]\u\[\e[m\] \[\e[33m\]\W\[\e[m\]]\$ '
-fi
-
-
+# if [ $TERM == 'linux' ]; then
+#     PS1='[\u@\h \W]\$ '
+# else
+#     #PS1='$(__git_ps1 "[$VENV/\[\e[34m\]%s\[\e[m]\]")[\[\e[32m\]\u\[\e[m\] \[\e[33m\]\W\[\e[m\]]\$ '
+#     PS1='$VENV$(__git_ps1 "[\[\e[34m\]%s\[\e[m]\]")[\[\e[32m\]\u\[\e[m\] \[\e[33m\]\W\[\e[m\]]\$ '
+# fi
 
 
 # COLORED MANUALS
