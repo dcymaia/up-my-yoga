@@ -31,7 +31,7 @@ for_window [class="Google-chrome"] border none;
 
 
 # Colors
-client.focused          #5FFF87 #5FFF87 #000000 #2e9ef4 #5FFF87
+client.focused          #53008B #7533A2 #ffffff #53008B #53008B 
 
 
 for_window [window_role="(?i)about"] floating enable
@@ -197,13 +197,6 @@ bar {
     status_command /home/danilo/scripts/i3status.py
 }
 
-bar {
-    tray_output none
-    output DVI-D-0
-    font xft:DejaVuSansMono 10
-    status_command /home/danilo/scripts/i3status.py --vertical
-}
-
 
 focus_follows_mouse no
 
@@ -292,19 +285,13 @@ workspace 10 output DVI-D-0
 #workspace 10 output VGA-1
 
 
-
-
-
-
-
-
 exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.i3/workspace-1.json'"
 exec --no-startup-id xterm
 
 exec --no-startup-id "i3-msg 'workspace 2; append_layout ~/.i3/workspace-2.json'"
 exec --no-startup-id firefox
 
-exec --no-startup-id "i3-msg 'workspace 3; append_layout ~/.i3/workspace-3.json'"
-exec --no-startup-id rambox
+#exec --no-startup-id "i3-msg 'workspace 3; append_layout ~/.i3/workspace-3.json'"
+#exec --no-startup-id rambox
 
-exec --no-startup-id "i3-msg 'workspace 2;'"
+#exec --no-startup-id "i3-msg 'workspace 2;'"
