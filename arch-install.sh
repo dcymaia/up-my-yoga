@@ -133,6 +133,7 @@ if [ "$1" == "chroot" ]; then
     echo '1234' | sudo -S -u danilo true
 
     cp -r /home/up-yoga /home/danilo/up-yoga
+    chown -R danilo:danilo /home/danilo/up-yoga
 
     # fonts
     pacman -S --noconfirm noto-fonts ttf-dejavu ttf-roboto ttf-inconsolata
