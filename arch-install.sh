@@ -142,6 +142,7 @@ if [ "$1" == "chroot" ]; then
     BIN=/usr/bin
 
     ln -s /home/danilo/up-yoga/scripts /home/danilo/scripts
+    chown -R danilo:danilo /home/danilo/scripts
 
     ln -s /home/danilo/up-yoga/config/10-monitor.conf /etc/X11/xorg.conf.d    
     #ln -s /home/danilo/up-yoga/opt/Rambox/rambox $BIN
