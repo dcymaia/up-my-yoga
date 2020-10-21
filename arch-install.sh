@@ -145,7 +145,7 @@ if [ "$1" == "chroot" ]; then
     chown -R danilo:danilo /home/danilo/scripts
 
     ln -s /home/danilo/up-yoga/config/10-monitor.conf /etc/X11/xorg.conf.d    
-    #ln -s /home/danilo/up-yoga/opt/Rambox/rambox $BIN
+    ln -s /home/danilo/up-yoga/opt/Rambox/rambox $BIN
     ln -s /home/danilo/scripts/aur $BIN
     ln -s /home/danilo/scripts/heidisql $BIN
     ln -s /home/danilo/scripts/ctrlc $BIN
