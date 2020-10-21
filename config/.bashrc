@@ -25,11 +25,11 @@ alias s='git status'
 alias go='git add .; git commit -am go; git push origin master'
 alias vim='bash /home/danilo/scripts/run_vim'
 
-. $HOME/.git-prompt.sh
+#. $HOME/.git-prompt.sh
 
-# VIRTUALENVWRAPPER
-export WORKON_HOME=$HOME/.virtualenvs
-source /usr/bin/virtualenvwrapper.sh
+## VIRTUALENVWRAPPER
+#export WORKON_HOME=$HOME/.virtualenvs
+#source /usr/bin/virtualenvwrapper.sh
 
 ## BASH COMPLETION
 # [[ $PS1 && -f /usr/share/bash-completion/bash_completion.sh ]] && \
