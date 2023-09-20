@@ -11,6 +11,7 @@ sudo pacmac -S \
     docker \
     docker-compose \
     the_silver_searcher \
+    sublime-text \
 
 
 sudo pamac install
@@ -20,6 +21,7 @@ sudo pamac build \
     vim-plug \
     postman \
     google-earth \
+    stremio \
 
 
 # Docker
