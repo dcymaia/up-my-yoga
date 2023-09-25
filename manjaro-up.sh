@@ -22,6 +22,7 @@ sudo pamac build \
     postman \
     google-earth \
     stremio \
+    spotify \
 
 
 # Docker
