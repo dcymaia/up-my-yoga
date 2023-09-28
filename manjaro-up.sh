@@ -15,6 +15,9 @@ sudo pacmac -S \
 
 
 sudo pamac install
+    spotify-launcher \
+    downgrade \
+    ipython \
 
 sudo pamac build \
     google-chrome \
@@ -22,8 +25,6 @@ sudo pamac build \
     postman \
     google-earth \
     stremio \
-    spotify \
-
 
 # Docker
 sudo systemctl start docker.service
