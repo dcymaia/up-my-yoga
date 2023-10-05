@@ -12,6 +12,7 @@ sudo pacmac -S \
     docker-compose \
     the_silver_searcher \
     sublime-text \
+    gimp \
 
 
 sudo pamac install
